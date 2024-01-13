@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+            integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+    />
+
+    <title>Add Student</title>
+</head>
+<body>
+<style>
+      @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Lora:ital,wght@1,400;1,500;1,600&family=Poppins:wght@300&family=Varela+Round&display=swap");
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+      body {
+        background-color: #ffbcd1;
+      }
+      .heading {
+        font-size: 80px;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        top: 25px;
+        font-weight: 500;
+      }
+
+      .parent {
+        background-color: #a267ac;
+        width: 300px;
+        height: 300px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+        border-radius: 10px;
+      }
+      .input {
+        display: block;
+        width: 85%;
+        margin: 0px 0px 10px 10px;
+        margin-top: 25px;
+        padding: 10px;
+        border-radius: 10px;
+        border: 1px solid #eee;
+        transition: 0.3s border-color;
+      }
+      .input:hover {
+        border: 1px solid #aaa;
+      }
+
+      .button {
+        border: none;
+        margin-top: 24px;
+        font-size: 25px;
+        color: white;
+        padding: 1px 10px;
+        background-color: #ce7bb0;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      .button:hover {
+        background-color: #6867ac;
+      }
+    </style>
+
+<div class="heading">
+    <h1 class="heading">Add Student</h1>
+</div>
+
+<div class="parent">
+    <form action="#" th:action="@{/marks}" method="post" th:object="${staff}">
+        <input type="text" class="input" placeholder="enter the Subject" th:field="*{Subject}"/>
+        <p>Student Name : <select th:field="*{stdId}">
+            <option  th:each="student : ${students}" th:text="${student.name}" th:value="${student.id}"></option>
+        </select></p>
+        <input type="text" class="input" placeholder="enter marks" th:field="*{marks}"/>
+        <button type="submit" class="button">add</button>
+    </form>
+</div>
+</body>
+</html>
