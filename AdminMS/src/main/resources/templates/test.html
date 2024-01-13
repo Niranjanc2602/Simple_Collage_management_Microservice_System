@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>test</title>
+</head>
+<body>
+<form action="#" th:action="@{/check}" method="get" th:object="${adminEntity}">
+  <p>Name: <input type="text" th:field="*{name}" /></p>
+  <p>pwd: <input type="text" th:field="*{password}" /></p>
+  <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+</form>
+</body>
+</html>

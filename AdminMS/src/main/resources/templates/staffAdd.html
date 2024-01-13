@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+            integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+    />
+
+    <title>Add staff</title>
+</head>
+<body>
+<style>
+      @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Lora:ital,wght@1,400;1,500;1,600&family=Poppins:wght@300&family=Varela+Round&display=swap");
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+      body {
+        background-color: #774360;
+      }
+      .heading {
+        font-size: 80px;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        top: 25px;
+        font-weight: 500;
+      }
+
+      .parent {
+        background-color: #ee6983;
+        width: 400px;
+        height: 400px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+        border-radius: 10px;
+      }
+      .input {
+        width: 80%;
+        position:relative;
+        left:8px;
+        margin-top:20px ;
+        margin:30px;
+        padding: 14px;
+        border-radius: 10px;
+        border: 1px solid #eee;
+        transition: 0.3s border-color;
+
+      }
+      .input:hover {
+        border: 1px solid #aaa;
+      }
+
+      .button {
+      position:relative;
+      left:140px;
+      bottom:20px;
+        border: none;
+        font-size: 25px;
+        color: white;
+        padding: 1px 30px;
+        background-color: #ffc4c4;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      .button:hover {
+        background-color: #850e35;
+      }
+    </style>
+
+<div class="heading">
+    <h1 class="heading">Add Staff</h1>
+</div>
+
+<div class="parent">
+    <form action="#" th:action="@{/dashboard/staff/add}" method="post" th:object="${adminEntity}">
+        <input type="text" class="input" placeholder="enter the staffname" th:field="*{name}"/>
+        <input type="text" class="input" placeholder="enter the Password" th:field="*{password}"/>
+        <input type="text" class="input" placeholder="Enter the Email" th:field="*{mail}"/>
+        <p>course : <select th:field="*{course}">
+            <option  th:each="course : ${courses}" th:text="${course.name}" th:value="${course.id}"></option>
+        </select></p>
+        <button type="submit" class="button">add</button>
+    </form>
+</div>
+</div>
+</body>
+</html>

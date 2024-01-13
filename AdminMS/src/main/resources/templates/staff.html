@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body><!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>display info</title>
+</head>
+<body>
+<style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0px;
+        height: 100%;
+        background-color: #a9c9ff;
+        background-image: linear-gradient(180deg, #a9c9ff 0%, #ffbbec 100%);
+        overflow: hidden;
+      }
+      .heading {
+        font-size: 70px;
+        font-weight: 600;
+        background-image: linear-gradient(to left, #e8d718, #e81010);
+        color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
+        text-align: center;
+        margin-top: 177px;
+      }
+      .center {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .styled-table {
+        border-collapse: collapse;
+        margin: 25px 0;
+        font-size: 0.9em;
+        font-family: sans-serif;
+        min-width: 400px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+      }
+      .styled-table thead tr {
+        background-color: #009879;
+        color: #ffffff;
+        text-align: left;
+      }
+      .styled-table th,
+      .styled-table td {
+        padding: 12px 15px;
+      }
+      .styled-table tbody tr {
+        border-bottom: 1px solid #dddddd;
+      }
+
+      .styled-table tbody tr:nth-of-type(even) {
+        background-color: #f3f3f3;
+      }
+
+      .styled-table tbody tr:last-of-type {
+        border-bottom: 2px solid #009879;
+      }
+      .styled-table tbody tr.active-row {
+        font-weight: bold;
+        color: #009879;
+      }
+    </style>
+
+<h3 class="heading">Displaying Staff Information</h3>
+<div class="center">
+    <table class="styled-table">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Gmail</th>
+            <th>Password</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="active-row" th:each="staff : ${staff}">
+            <td th:text="${staff.name}"></td>
+            <td th:text="${staff.mail}"></td>
+            <td th:text="${staff.password}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
