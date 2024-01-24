@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+            integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+    />
+    <title>Front page</title>
+</head>
+<body>
+<style>
+      @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@1,800&family=Varela&display=swap");
+
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+        font-family: "Open Sans", sans-serif;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /*background-image: url("https://i.pinimg.com/564x/96/7d/2e/967d2ece9df146d5d33610d7beecc34c.jpg");*/
+        background-color:#293462;
+      }
+
+      .heading {
+        font-size: 60px;
+        color: white;
+        font-family: "Open Sans", sans-serif;
+        margin-bottom: 100px;
+        margin-top: 50px;
+        font-weight: 500;
+        text-shadow: 5px;
+      }
+      .slide-container {
+        display: flex;
+        margin: auto;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        padding: 20px;
+        border-radius: 20px;
+      }
+      .slide-content {
+        margin: 0 40px;
+      }
+      
+
+    
+
+      .button {
+        border: none;
+        font-size: 25px;
+        color: white;
+        padding: 20px 16px;
+        background-color: #FEDB39;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin: 0px 25px 0px 25px;
+      }
+      .button:hover {
+        
+        background-color: #D61C4E;
+      }
+      /*
+      .btn2{
+        margin-left: 88px;
+      }
+      .btn3{
+            margin-left: 25px;
+      }
+      */
+     
+    .back-video{
+        position:absolute;
+        top:0;
+        right:0;
+        left:0;
+        z-index:-1;
+        width:100%;
+      }
+    </style>
+<video autoplay muted loop playsinline class="back-video">
+    <source src="../static/images/students.mp4" th:src="@{images/students.mp4}" type="video/mp4">
+</video>
+<div class="box">
+    <div class="heading">
+        <h1 >STUDENT PORTAL</h1>
+    </div>
+    <div class="slide-container">
+        <div class="slide-content">
+
+            <button class="button">
+                <a href="student" class="button">View Details</a>
+            </button>
+            <button class="button btn2">
+                <a href="marks" class="button">View Marks</a>
+            </button>
+            <button class="button btn3">
+                <a href="table" class="button"> View Time Table</a>
+            </button>
+
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>

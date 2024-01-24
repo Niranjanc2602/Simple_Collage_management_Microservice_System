@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+            integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+    />
+    <title>Front page</title>
+</head>
+<body>
+<style>
+      @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@1,800&family=Varela&display=swap");
+
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+        font-family: "Open Sans", sans-serif;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /*background-image: url("https://i.pinimg.com/564x/96/7d/2e/967d2ece9df146d5d33610d7beecc34c.jpg");*/
+        background-color: black;
+      }
+
+      .heading {
+        font-size: 60px;
+        color: white;
+        font-family: "Open Sans", sans-serif;
+        margin-bottom: 100px;
+        margin-top: 50px;
+        font-weight: 500;
+        text-shadow: 5px;
+      }
+      .slide-container {
+        display: flex;
+        margin: auto;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 100%;
+        padding: 20px;
+        border-radius: 20px;
+      }
+      .slide-content {
+        margin: 0 40px;
+      }
+
+      .card {
+        width: 250px;
+        height: 370px;
+        border-radius: 25px;
+        background-color: lightgrey;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      .button {
+        border: none;
+        margin-top: 25px;
+        font-size: 25px;
+        color: white;
+        padding: 8px 16px;
+        background-color: #d61c4e;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      .button:hover {
+        color: #fef9a7;
+        background-color: #f77e21;
+      }
+      .back-video{
+        position:absolute;
+        top:0;
+        right:0;
+        left:0;
+        z-index:-1;
+        width:100%;
+      }
+    </style>
+<video autoplay muted loop playsinline class="back-video">
+    <source src="../static/images/admin.mp4" th:src="@{images/admin.mp4}" type="video/mp4">
+</video>
+<div class="box">
+    <div class="heading">
+        <h1 class="heading">ADMIN PORTAL</h1>
+    </div>
+    <div class="slide-container">
+        <div class="slide-content">
+            <div class="card-wrapper">
+                <div class="card">
+                    <button class="button" onclick=""><a class="button" href="dashboard/admin/add">Add Admin</a></button>
+                    <button class="button" onclick="dashboard/admin"><a class="button" href="dashboard/admin">View Admin</a></button>
+                    <button class="button" onclick=""><a class="button" href="dashboard/admin/delete">Delete Admin</a></button>
+                </div>
+            </div>
+        </div>
+
+        <!--second card teacher login-->
+        <div class="slide-content">
+            <div class="card-wrapper">
+                <div class="card">
+                    <button class="button" th:onclick=""><a class="button" href="dashboard/staff/add">Add staff</a></button>
+                    <button class="button" onclick="staff"><a class="button" href="staff">View staffs</a></button>
+                    <button class="button" onclick=""><a class="button" href="dashboard/staff/delete">Delete a staff</a></button>
+                </div>
+            </div>
+        </div>
+        <!--card ending-->
+
+        <!--student login-->
+        <div class="slide-content">
+            <div class="card-wrapper">
+                <div class="card">
+                    <button class="button" onclick="course"><a class="button" href="course">Add Course</a></button>
+                    <button class="button" onclick="getCourse"><a class="button" href="getCourse">View Course</a></button>
+                    <button class="button" onclick=""><a class="button" href="dashboard/course/delete">Delete Course</a></button>
+                </div>
+            </div>
+        </div>
+
+        <!---course-->
+        <div class="slide-content">
+            <div class="card-wrapper">
+                <div class="card">
+                    <button class="button" onClick="dashboard/student/add"><a class="button" href="dashboard/student/add">Add student</a></button>
+                    <button class="button" onClick="student"><a class="button" href="/student">View students</a></button>
+                    <button class="button" onClick=""><a class="button" href="dashboard/student/delete">Delete student</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+            integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+    />
+    <title>Front page</title>
+</head>
+<body >
+<style>
+      @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@1,800&family=Varela&display=swap");
+
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+        font-family: "Open Sans", sans-serif;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #54bab9;
+      }
+
+      .heading {
+        font-size: 60px;
+        color: #ff7a05;
+        font-family: "Open Sans", sans-serif;
+        margin-bottom: 100px;
+        margin-top: 50px;
+        font-weight: 500;
+        text-shadow: 5px;
+      }
+      .slide-container {
+        display: flex;
+        margin: auto;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 100%;
+
+        padding: 20px;
+        border-radius: 20px;
+      }
+
+      .card-image {
+        position: realative;
+        height: 150px;
+        width: 150px;
+        border-radius: 50%;
+        padding: 3px;
+        background: #fff;
+      }
+      .card-image .card-img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 4px solid rgb(255, 145, 0);
+      }
+      .card-image {
+        margin-top: 10px;
+      }
+      .card {
+        width: 250px;
+        height: 370px;
+        border-radius: 25px;
+        background:lightgrey;
+      }
+      .image-content,
+      .card-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 14px;
+      }
+      .image-content {
+        row-gap: 5px;
+      }
+      .name {
+        font-size: 40px;
+        font-weight: 700;
+        color: #ff7a05;
+        margin-bottom: 2px;
+      }
+      .button {
+        border: none;
+        margin-top: 25px;
+        font-size: 25px;
+        color: #fff;
+        padding: 8px 16px;
+        background-color: rgb(255, 255, 255);
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .link {
+        text-decoration: none;
+         color: #ff7a05;
+      }
+      .button:hover {
+        background: #e168f4;
+      }
+      .back-video{
+        position:absolute;
+        top:0;
+        right:0;
+        left:0;
+        z-index:-1;
+        width:100%;
+      }
+    </style>
+<video autoplay muted loop playsinline class="back-video">
+    <source src="../static/images/college.mp4" th:src="@{images/college.mp4}" type="video/mp4">
+</video>
+<div class="box">
+    <div class="heading">
+        <h1 class="heading">Welcome to the college management portal</h1>
+    </div>
+    <div class="slide-container">
+        <div class="slide-content">
+            <div class="card-wrapper">
+                <div class="card">
+                    <div class="image-content">
+                        <div class="card-image">
+                            <img
+                                    src="https://previews.123rf.com/images/solomapoppy/solomapoppy1704/solomapoppy170400019/75483176-workspace-of-professional-working-developer-programmer-system-administrator-or-designer-with-desk-ch.jpg"
+                                    class="card-img"
+                            />
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h2 class="name">Admin</h2>
+                        <button class="button">
+                            <a class="link" href="http://localhost:8000/login">Login</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--second card teacher login-->
+        <div class="slide-content">
+            <div class="card-wrapper">
+                <div class="card">
+                    <div class="image-content">
+                        <div class="card-image">
+                            <img
+                                    src="https://as1.ftcdn.net/v2/jpg/00/92/81/66/1000_F_92816655_K86VoIH9hol5wmj3BVX6cv4axoJvNHKY.jpg"
+                                    class="card-img"
+                            />
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h2 class="name">Staff</h2>
+                        <button class="button">
+                            <a class="link" href="http://localhost:8002/login">Login</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--card ending-->
+
+        <!--student login-->
+        <div class="slide-content">
+            <div class="card-wrapper">
+                <div class="card">
+                    <div class="image-content">
+                        <div class="card-image">
+                            <img
+                                    src="https://as2.ftcdn.net/v2/jpg/04/96/61/63/1000_F_496616377_TxuTmE2XoFyrl0YAZUEMLqMMAmhSOEOo.jpg"
+                                    class="card-img"
+                            />
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h2 class="name">Student</h2>
+                        <button class="button">
+                            <a class="link" href="http://localhost:8003/login">Login</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--ends here-->
+    </div>
+</div>
+</body>
+</html>
