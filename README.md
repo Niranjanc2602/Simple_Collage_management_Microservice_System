@@ -1,15 +1,7 @@
-<<<<<<< HEAD
 # Simple_Collage_management_Microservice_System
-
-Download all the Spring boot project.
-
-Run each project separately.
-=======
-# College Management System Microservices
 
 This project consists of microservices for a College Management System. It is designed to manage administrative tasks, staff, students, courses, and student marks. Each service runs independently and communicates with the MySQL database.
 
-# College Management System Microservices
 ## Microservices Overview
 
 ### 1. Dashboard
@@ -76,4 +68,3 @@ This project consists of microservices for a College Management System. It is de
    cd college-management-system
    open the project in intellj or eclipse
    run each project
->>>>>>> dev/Niranjan
