@@ -1,0 +1,37 @@
+# .gitignore
+
+# Ignore target/ directory created by Maven
+/target/
+
+# Ignore IDE files
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Ignore Eclipse files
+.classpath
+.project
+.settings/
+
+# Ignore logs
+*.log
+
+# Ignore compiled Java classes
+*.class
+
+# Ignore Maven build directory
+/mvnw
+/mvnw.cmd
+
+# Ignore Spring Boot application properties
+/application*.properties
+
+# Ignore MySQL database backup files
+*.sql
+
+# Ignore compiled HTML files
+*.html
+
+# Ignore compiled CSS files
+*.css
